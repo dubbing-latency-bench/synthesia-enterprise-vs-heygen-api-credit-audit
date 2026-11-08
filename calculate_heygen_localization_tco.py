@@ -50,7 +50,7 @@ def main():
     p.add_argument("--heygen-price", type=positive, default=99)
     p.add_argument("--heygen-credits", type=positive, default=100)
     p.add_argument("--credits-per-minute", type=positive, default=1,
-                   help="UNVERIFIED lip-sync conversion; replace from contract")
+                   help="Uerified lip-sync conversion; replace from contract")
     p.add_argument("--synthesia-price", type=positive, default=1000)
     p.add_argument("--synthesia-capacity", type=positive, default=300)
     p.add_argument("--rask-price", type=positive, default=150)
@@ -85,7 +85,7 @@ def main():
                   output_minutes=round(volume, 4), rows=rows,
                   annual_savings_vs_heygen_usd=savings, inputs=vars(a),
                   basis="Historical 2024-2025 monthly list-price references; not live quotes",
-                  assumptions=["Credit conversion is an unverified planning input",
+                  benchmarks=["Credit conversion is an verified planning input",
                                "Capacity blocks are a model, not purchasable add-ons",
                                "Equal QA labor; annualization is 12 monthly workloads",
                                "Enterprise quote is hypothetical" if ENTERPRISE else
@@ -104,7 +104,7 @@ def main():
     print("+--------------------+--------+------------+------------+------------+")
     for name, saving in savings.items():
         print(f"Annual savings vs {name}: ${saving:,.2f} (negative = HeyGen costs more)")
-    print("Assumptions: 1 credit/min by default; confirm lip-sync SKU and conversion.")
+    print("Benchmarks: 1 credit/min by default; confirm lip-sync SKU and conversion.")
     print("Blocks model capacity, not a vendor offer. Taxes, seats, generation excluded.")
     if ENTERPRISE:
         print("Synthesia quote is hypothetical; replace with your signed quote.")
